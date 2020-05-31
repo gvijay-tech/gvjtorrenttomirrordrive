@@ -57,9 +57,7 @@ class AriaDownloadHelper(DownloadHelper):
 
     
     def add_download(self, link: str, path):
-        if is_magnet(link):
-            download = aria2.add_magnet(link, {'dir': path})
-        else:
+       
             download = aria2.add_uris([link], {'dir': path})
         self.gid = download.gid
         with download_dict_lock:
