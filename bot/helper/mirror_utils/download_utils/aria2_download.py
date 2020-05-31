@@ -55,7 +55,7 @@ class AriaDownloadHelper(DownloadHelper):
                 LOGGER.info(f"Download Error: {error}")
                 self.__listener.onDownloadError(error)
 
-    def add_download(self, link: str, path):
+    def add_download(aria_instance, link: str, path):
         if is_magnet(link):
             download = aria_instance.add_magnet(link, {'dir': path})
         else:
